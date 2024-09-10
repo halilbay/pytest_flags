@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "pytest-flags"
+version = "0.1.0"
+description = "Usage of pytest flags examples"
+authors = ["Halil Bay"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tortoise-orm = "^0.21.6"
+asyncpg = "^0.29.0"
+pytest = "^8.3.2"
+pytest-asyncio = "^0.24.0"
+pytest-cov = "^5.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+package-mode = false
+
+[tool.pytest.ini_options]
+addopts = "-v"
+markers = [
+    "success: mark test as a successful test",
+    "failure: mark test as a failure scenario",
+    "slow: mark test as a slow-running test",
+    "db: mark test as database-related",
+]
